@@ -197,11 +197,11 @@ background-color: #4F7995;
 */
 
 .border-radius-7 {
-border-radius: 7px;
+border-radius: 7px !important;
 }
 
 main .border-radius-10 {
-border-radius: 10px;
+border-radius: 10px !important;
 }
 
 
@@ -392,7 +392,9 @@ nav .logo {
 position: absolute;
 display: inline-block;
 padding: 0;
+
 }
+
 
 #nav-screen .nav-menu {
 display: flex;
@@ -527,6 +529,7 @@ font-size: 2rem;
 .nav-co .brand-logo {
 margin-top: 0.5rem;
 margin-left: 4rem;
+    width: 40%;
 }
 
 main {
@@ -941,4 +944,12 @@ padding-bottom: 10px;
 
 footer.row {
 margin-bottom: 0;
+}
+
+#btn-co.btn:hover {
+background-color: #E9511D !important;
+}
+
+#btn-co.btn a:hover {
+color: white;
 }

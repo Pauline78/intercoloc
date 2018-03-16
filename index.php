@@ -2,6 +2,33 @@
 require_once('includes/init.inc.php');
 $title = 'Inter\'Coloc';
 
+if(isset($_POST['connexion'])) {
+
+    $resultat = $pdo->prepare("SELECT * FROM clients WHERE clients_email = :email AND clients_password = :password");
+
+    $resultat->bindValue(':email', $_POST['email']);
+    $resultat->bindValue(':password', $_POST['password']);
+    $resultat->execute();
+
+    $resultats = $resultat->fetch(PDO::FETCH_ASSOC);
+
+    if(isset($resultats)) {
+        if($resultats['clients_email'] == 'administrateur@gmail.com' && $resultats['clients_password'] == 'admin'){
+            $_SESSION['admin'] = $resultats;
+
+        }else{
+            $_SESSION['user'] = $resultats;
+        }
+
+
+        header('location:index-co.php');
+    }
+    else {
+        $msg= '<p class="red-text">Mauvais identifiant ou mot de passe</p>';
+    }
+
+
+}
 require_once('includes/haut.inc.php');
 require_once('includes/nav_front.php');
 
@@ -38,7 +65,7 @@ require_once('includes/nav_front.php');
         <div class="flex flex-s-a width-100 pad-top-30px row">
             <div class="col s12 m3 center-align div-icons flex flex-col flex-c-c">
                 <div class="rond-valeur rond-orange flex flex-c-c">
-                    <img class="width-60" src="images/pshiit.png" alt="pshiit_partage" title="Pshiit Partage">
+                    <img class="width-60" src="images/share-icon.png" alt="pshiit_partage" title="Pshiit Partage">
                 </div>
                 <h4><strong>Partage</strong></h4>
                 <p>Une colocation basée sur la <strong>transmission</strong> de valeurs, de vécu,
@@ -46,7 +73,7 @@ require_once('includes/nav_front.php');
             </div>
             <div class="col s12 m3 center-align div-icons flex flex-col flex-c-c">
                 <div class="rond-valeur rond-bleu flex flex-c-c">
-                    <img class="width-40" src="images/euro.png" alt="euro_entraide" title="Euro Entraide">
+                    <img class="width-40" src="images/entraide.png" alt="euro_entraide" title="Euro Entraide">
                 </div>
                 <h4>Entraide</h4>
                 <p>Nous proposons un  <strong>soutient</strong> ainsi qu'un respect mutuel entre, les
@@ -54,10 +81,10 @@ require_once('includes/nav_front.php');
             </div>
             <div class="col s12 m3 center-align div-icons flex flex-col flex-c-c">
                 <div class="rond-valeur rond-orange flex flex-c-c">
-                    <img class="width-40" src="images/canap.png" alt="canap_confiance" title="Canap Confiance">
+                    <img class="width-40" src="images/confiance.png" alt="canap_confiance" title="Canap Confiance">
                 </div>
                 <h4>Confiance</h4>
-                <p>Un site sécurisé et des offres <strong>fiables </strong>pour vous assurer une <br>colocation
+                <p>Un site sécurisé et des offres <strong>fiables </strong>pour vous assurer une colocation
                     saine.</p>
             </div>
             <div class="col s12 m3 center-align div-icons flex flex-col flex-c-c">
@@ -65,7 +92,7 @@ require_once('includes/nav_front.php');
                     <img class="width-40" src="images/home.png" alt="home_accompagnement" title="Home Accompagnement">
                 </div>
                 <h4>Accompagnement</h4>
-                <p>Un suivi permanent de vos attentes et une <strong>présence</strong> <br>quotidienne pour
+                <p>Un suivi permanent de vos attentes et une <strong>présence</strong> quotidienne pour
                     vous</p>
             </div>
         </div>
@@ -98,41 +125,20 @@ require_once('includes/nav_front.php');
     </section>-->
 
     <section id="fonctionnement" class="background-gris height-80vh flex flex-col flex-c-c">
-        <h2 class="center-align marg-bot-5">Comment ça marche ?</h2>
+        <h2 class="center-align marg-bot-5 marg-top-2">Inter'Coloc, qu'est-ce que c'est ?</h2>
         <div class="flex flex-c-c row">
             <div class="flex-col col l6 center-align">
-                <img class="width-80" src="images/back_accueil.jpg" alt="cmt_ca_marche" title="Comment ca marche">
+                <img class="width-80" src="images/paris_home.jpg" alt="cmt_ca_marche" title="Comment ca marche">
             </div>
             <div class="flex-col col l6">
-                <!-- INSCRIPTION -->
-                <div class="width-100 height-50px flex flex-c-c">
-                    <p class="width-15 height-100 flex flex-a">Inscription</p>
-                    <p class="width-10 height-100 flex flex-a"><i class="material-icons">arrow_forward</i></p>
-                    <p class="width-70 height-100 flex flex-a">On veut en savoir plus sur vous !</p>
-                </div>
-                <!-- FORMULAIRE -->
-                <div class="width-100 height-50px flex flex-c-c">
-                    <p class="width-15 height-100 flex flex-a">Formulaire</p>
-                    <p class="width-10 height-100 flex flex-a"><i class="material-icons">arrow_forward</i></p>
-                    <p class="width-70 height-100 flex flex-a">Des questions permettant la meilleur correspondance en déterminant votre profil</p>
-                </div>
-                <!-- RESULTAT -->
-                <div class="width-100 height-50px flex flex-c-c">
-                    <p class="width-15 height-100 flex flex-a">Résultat</p>
-                    <p class="width-10 height-100 flex flex-a"><i class="material-icons">arrow_forward</i></p>
-                    <p class="width-70 height-100 flex flex-a">Notre programme vous proposeras divers profils correspondant à vos caractéristiques</p>
-                </div>
-                <!-- EVALUATION -->
-                <div class="width-100 height-50px flex flex-c-c">
-                    <p class="width-15 height-100 flex flex-a">Evaluation</p>
-                    <p class="width-10 height-100 flex flex-a"><i class="material-icons">arrow_forward</i></p>
-                    <p class="width-70 height-100 flex flex-a">Afin de garantir la meilleur colocation, donnez votre avis en ligne après vos rencontres.</p>
-                </div>
-                <!-- RECHERCHE -->
-                <div class="width-100 height-50px flex flex-c-c">
-                    <p class="width-15 height-100 flex flex-a">Recherche</p>
-                    <p class="width-10 height-100 flex flex-a"><i class="material-icons">arrow_forward</i></p>
-                    <p class="width-70 height-100 flex flex-a">Vient le moment de trouver la colocation idéal</p>
+                <div>
+                    <p>Inter’Coloc lutte contre la <strong>solitude</strong> et les <strong>prix élevés du logement</strong> français.</p>
+                    <p> Nous avons pour projet de <strong>réunir des personnes de tous âges ayant des passions communes lors de  colocations intergénérationnelle</strong>.</p>
+                    <p>Lors de l’inscription, l’utilisateur devra remplir un formulaire constitué de diverses questions.</p>
+                    <p>En fonction du profil établie, l’utilisateur se verra proposer diverses personnes ayant eu des résultats similaires.</p>
+                    <p>Et ce, dans le but de réunir des personnes pouvant s’entendre pour ne faire perdre de temps aux utilisateurs à la recherche rapide d’un contact serieux.</p>
+                    <p>Un étudiant se verra donc proposé divers retraité au profil similaire disposant d’un logement trop grand pour lui, alors qu’un retraité verra quand lui des actifs à la recherche de logement.</p>
+                    <p>Suite à cela, les deux se rencontreront, puis, pourront poursuivre leurs projet vers une colocation si tout va bien.</p>
                 </div>
                 <div class="marg-top-5">
                     <span id="suscribe-comment" class="btn-orange">S'inscrire</span>
@@ -207,7 +213,33 @@ require_once('includes/nav_front.php');
         </div>
     </section>
 
+    <div id="modal1" class="modal">
+        <div class="modal-content flex-col flex-c-c width-100 height-100">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
+            <h3 class="center-align">Connexion</h3>
 
+            <form class=" " method="post" action="">
+
+                <div class='row'>
+                    <div class='input-field col s12 m12 l8 offset-l2'>
+                        <input class='validate' type='text' name='email' id='email' placeholder="Email"/>
+                        <label class="active" for='email'>Email</label>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <div class='input-field col s12 m12 l8 offset-l2'>
+                        <input class='validate' type='password' name='password' id='password' />
+                        <label class="active" for='password'>Mot de passe</label>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <button type='submit' name='connexion' class='col s12 m12 l2 offset-l5 btn btn-large waves-effect orange darken-4 border-radius-10'>Connexion</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 </main>
 
@@ -218,5 +250,14 @@ require_once('includes/bas.inc.php');
 ?>
 <script type="text/javascript">
     $('.carousel.carousel-slider').carousel({fullWidth: true});
+
+    $(document).ready(function(){
+        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+    });
+
+    $('#modal1').modal('open');
+
+    $('#modal1').modal('close');
 </script>
 

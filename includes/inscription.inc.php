@@ -20,6 +20,7 @@ if(isset($_POST['suivant']) && !empty($_POST['email'])  && !empty($_POST['nom'])
         $insert->bindValue(':newsletter', $_POST['newsletter'], PDO::PARAM_BOOL);
         // 4 j'execute ma requete
         $insert->execute();
+        var_dump($insert);
     } else {
         $msg = '<p class="alert alert-danger">Il faut au moins une lettre pour les 2 champs</p>';
     }

@@ -2,6 +2,7 @@
 require_once('includes/init.inc.php');
 $title = 'Inter\'Coloc';
 
+
 /* Affichage des clients */
 $query =$pdo->query ("SELECT id_clients, clients_sexe, clients_prenom, clients_nom, clients_age, clients_adresse, clients_cp, clients_ville, clients_phone, clients_situation, clients_coloc, DATE_FORMAT(created_at, '%d/%m/%Y - %H:%i') AS created_at, DATE_FORMAT(updated_at, '%d/%m/%Y - %H:%i') AS updated_at FROM clients LIMIT 3");
 $utilisateurs = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -10,10 +11,15 @@ $utilisateurs = $query->fetchAll(PDO::FETCH_ASSOC);
 $query =$pdo->query ("SELECT * FROM annonce, clients WHERE clients.id_clients = annonce.id_clients LIMIT 3");
 $annonces = $query->fetchAll(PDO::FETCH_ASSOC);
 
+//var_dump($_SESSION['admin'];
+/*
+   Le var_dump($_SESSION['admin']; récupère quelque chose de NULL mais je ne sais pas pourquoi pourtant il reconnait que ce n'est pas une session user
+ */
 
 require_once('includes/haut.inc.php');
-require_once('includes/nav_co.php');
 
+
+require_once('includes/nav_co.php');
 ?>
 <div id="triangle-code"></div>
 <main>
@@ -21,7 +27,12 @@ require_once('includes/nav_co.php');
 
         <div class="row">
             <div class="col s12 m12 l8 ">
-                <h1>Bienvenue Sur Inter'Coloc !</h1>
+                <h1>Bienvenue <?php
+                    if($_SESSION['user']){
+                        echo $_SESSION['user']['clients_prenom'];
+                    }else {
+                        $_SESSION['admin']['clients_prenom'];
+                    }?> !</h1>
                 <h3 class="marg-bot-5">Lancez dès à présent votre recherche pour trouver votre colocation idéale</h3>
                 <h4>Triez par:</h4>
                 <form class="flex flex-a width-60">
@@ -150,4 +161,13 @@ require_once ('includes/bas.inc.php');
     $(document).ready(function() {
         $('select').material_select();
     });
+
+    $(document).ready(function(){
+        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+    });
+
+    $('#modal1').modal('open');
+
+    $('#modal1').modal('close');
 </script>
