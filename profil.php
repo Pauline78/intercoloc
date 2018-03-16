@@ -2,6 +2,7 @@
 require_once('includes/init.inc.php');
 $title = 'Profil';
 
+
 /* Affichage des clients */
 $query =$pdo->query ("SELECT id_clients, clients_sexe, clients_prenom, clients_nom, clients_age, clients_adresse, clients_cp, clients_ville, clients_phone, clients_situation, clients_coloc, DATE_FORMAT(created_at, '%d/%m/%Y - %H:%i') AS created_at, DATE_FORMAT(updated_at, '%d/%m/%Y - %H:%i') AS updated_at FROM clients LIMIT 3");
 $utilisateurs = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -26,7 +27,7 @@ require_once('includes/nav_co.php');
                         </div>
                         <div class="pad-top-30px">
                             <h3><?php
-                                if($_SESSION['admin']){
+                                if(isset($_SESSION['admin'])){
                                     echo $_SESSION['admin']['clients_prenom']. ' '.$_SESSION['admin']['clients_nom'] ;
                                 }else {
                                     echo $_SESSION['user']['clients_prenom']. ' ' .$_SESSION['user']['clients_nom'];
@@ -36,7 +37,7 @@ require_once('includes/nav_co.php');
                         <div class="flex flex-a">
                             <i class="material-icons marg-right-20px">location_city</i>
                             <p><?php
-                                if($_SESSION['admin']){
+                                if(isset($_SESSION['admin'])){
                                     echo $_SESSION['admin']['clients_adresse']. ' '.$_SESSION['admin']['clients_cp']. ' '.$_SESSION['admin']['clients_ville'] ;
                                 }else {
                                     echo $_SESSION['user']['clients_adresse']. ' ' .$_SESSION['user']['clients_cp']. ' ' .$_SESSION['user']['clients_ville'];
@@ -47,7 +48,7 @@ require_once('includes/nav_co.php');
                             <div class="flex flex-a marg-right-20px">
                                 <i class="material-icons marg-right-20px">person</i>
                                 <p><?php
-                                    if($_SESSION['admin']){
+                                    if(isset($_SESSION['admin'])){
                                         echo $_SESSION['admin']['clients_sexe'];
                                     }else {
                                         echo $_SESSION['user']['clients_sexe'];
@@ -56,7 +57,7 @@ require_once('includes/nav_co.php');
                             <div class="flex flex-a">
                                 <i class="material-icons marg-right-20px">cake</i>
                                 <p><?php
-                                    if($_SESSION['admin']){
+                                    if(isset($_SESSION['admin'])){
                                         echo $_SESSION['admin']['clients_age'];
                                     }else {
                                         echo $_SESSION['user']['clients_age'];
@@ -78,21 +79,21 @@ require_once('includes/nav_co.php');
                         <div  class="col s12 m12 l6 flex-col no-marg marg-bot-2">
                             <h3 class="orange-text">Résumé</h3>
                             <p><?php
-                                if($_SESSION['admin']){
+                                if(isset($_SESSION['admin'])){
                                     echo $_SESSION['admin']['clients_phone'];
                                 }else {
                                     echo $_SESSION['user']['clients_phone'];
                                 }?></p>
 
                             <p><?php
-                                if($_SESSION['admin']){
+                                if(isset($_SESSION['admin'])){
                                     echo $_SESSION['admin']['clients_situation'];
                                 }else {
                                     echo $_SESSION['user']['clients_situation'];
                                 }?></p>
 
                             <p><?php
-                                if($_SESSION['admin']){
+                                if(isset($_SESSION['admin'])){
                                     echo $_SESSION['admin']['clients_coloc'];
                                 }else {
                                     echo $_SESSION['user']['clients_coloc'];

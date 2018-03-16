@@ -65,10 +65,18 @@ require_once ('includes/nav_front.php');
 
     <form id="bloc-form" method="post">
         <!-- inserer ici l'input avec comme value, le mail de la personne -->
-        <input type="hidden" id="p1" name="profil_1" value="0">
-        <input type="hidden" id="p2" name="profil_2" value="0">
-        <input type="hidden" id="p3" name="profil_3" value="0">
-        <input type="hidden" id="p4" name="profil_4" value="0">
+        <input type="hidden" id="p1" name="profil[]" value="0">
+        <input type="hidden" id="p2" name="profil[]" value="0">
+        <input type="hidden" id="p3" name="profil[]" value="0">
+        <input type="hidden" id="p4" name="profil[]" value="0">
+
+        <input type="hidden" name="email" value="<?php echo $_POST['email'] ?>">
+        <input type="hidden" name="password" value="<?php echo $_POST['password'] ?>">
+        <input type="hidden" name="prenom" value="<?php echo $_POST['prenom'] ?>">
+        <input type="hidden" name="nom" value="<?php echo $_POST['nom'] ?>">
+        <input type="hidden" name="sexe" value="<?php echo $_POST['sexe'] ?>">
+        <input type="hidden" name="age" value="<?php echo $_POST['age'] ?>">
+        <input type="hidden" name="newsletter" value="<?php echo $_POST['newsletter'] ?>">
 
         <div id="formulaire">
             

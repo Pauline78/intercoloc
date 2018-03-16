@@ -22,14 +22,13 @@ if(isset($_POST['connexion'])) {
             $_SESSION['user'] = $resultats;
         }
 
-
         header('location:index-co.php');
     }
     else {
         $msg= '<p class="red-text">Mauvais identifiant ou mot de passe</p>';
     }
 
-
+// print_r($_POST);
 }
 require_once ('includes/haut.inc.php');
 ?>
@@ -40,14 +39,14 @@ require_once ('includes/haut.inc.php');
 
         <div class='row'>
             <div class='input-field col s12 m12 l4 offset-l4'>
-                <input class='validate' type='text' name='email' id='email' placeholder="Email"/>
+                <input class='validate' type='text' name='clients_email' id='email' placeholder="Email"/>
                 <label class="active" for='email'>Email</label>
             </div>
         </div>
 
         <div class='row'>
             <div class='input-field col s12 m12 l4 offset-l4'>
-                <input class='validate' type='password' name='password' id='password' />
+                <input class='validate' type='password' name='clients_password' id='password' />
                 <label class="active" for='password'>Mot de passe</label>
             </div>
         </div>

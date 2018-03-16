@@ -114,7 +114,7 @@ if(isset($_POST['suivant']) && !empty($_POST['email'])  && !empty($_POST['nom'])
 
             <div class="flex flex-c-c width-100 height-85">
 
-                <form id="inscription-zone-form-email" method="POST" class="height-90 width-100 flex-col flex-a flex-s-a pad-top-2" action="<?= (!empty($resultat)) ? 'admin/traitement-ajout-client.php' : 'admin/traitement-ajout-client.php' ?>">
+                <form id="inscription-zone-form-email" method="POST" class="height-90 width-100 flex-col flex-a flex-s-a pad-top-2" action="<?= (!empty($resultat)) ? 'formulaire.php' : 'formulaire.php' ?>">
 
                     <input class="inscription-zone-form-email-champ" type="email" name="email" placeholder="Adresse e-mail" value="<?= (!empty($resultat)) ? $resultat['email'] : '' ?>">
 
