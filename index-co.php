@@ -76,7 +76,7 @@ require_once('includes/nav_co.php');
                                     echo '<i class="material-icons">import_export</i>';
                                 }
                                 ?>
-                            </p> 
+                            </p>
                             <p style="font-size: 0.8rem; padding-top: 5%;">Publié par <?= $value['clients_prenom'] ?> il y a 2 jour(s)</p>
                         </div>
                     </div>
