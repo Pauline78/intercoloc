@@ -40,9 +40,9 @@ if(isset($_POST['suivant']) && !empty($_POST['email'])  && !empty($_POST['nom'])
 
 
     // si l'insertion s'est bien passee
-    if($insertion)
+    if($insert)
     {
-        $confirmation = '<h3 class="center green-text">Enregistrement effectué</h3>';
+        echo '<h3 class="center green-text">Enregistrement effectué</h3>';
     }
     else
     {
@@ -53,4 +53,4 @@ if(isset($_POST['suivant']) && !empty($_POST['email'])  && !empty($_POST['nom'])
 } else {
     var_dump($_POST);
 }
-//header('location:profil_client.php');
+header('location:../formulaire.php');

@@ -1,6 +1,6 @@
 <?php
 
-include'connexion.php';
+include'parameters.inc.php';
 
 $question = $pdo->query( 'SELECT * FROM questionnaire ORDER BY cat ASC' );
 $questions = $question->fetchAll( PDO::FETCH_ASSOC );
