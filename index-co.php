@@ -27,12 +27,14 @@ require_once('includes/nav_co.php');
 
         <div class="row">
             <div class="col s12 m12 l8 ">
-                <h1>Bienvenue <?php
-                    if($_SESSION['user']){
-                        echo $_SESSION['user']['clients_prenom'];
-                    }else {
-                        $_SESSION['admin']['clients_prenom'];
-                    }?> !</h1>
+                <?php
+                
+                    if(isset($_SESSION['user']['clients_prenom']))
+                        echo "<h1>Bienvenue " . $_SESSION['user']['clients_prenom'] . " !</h1>";
+                    else
+                        echo "<h1>Bienvenue " . $_SESSION['admin']['admin_user'] . " !</h1>";
+
+                    ?>
                 <h3 class="marg-bot-5">Lancez dès à présent votre recherche pour trouver votre colocation idéale</h3>
                 <h4>Triez par:</h4>
                 <form class="flex flex-a width-60">

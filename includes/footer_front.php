@@ -3,7 +3,9 @@
         <div class="row">
             <div class="col l6 s12">
                 <h3 class="white-text">A propos d'Inter'Coloc</h3>
-                <p class="grey-text text-lighten-4">Retraité veuf à petite retraite; j’étais soucieux de me voir vieillir. Possédant un modeste logement, Retraité veuf à petite retraite; j’étais soucieux.</p>
+                <p class="grey-text text-lighten-4">Trouvez la colocation parfaite, trouvez votre Inter'Coloc !</p>
+                <p class="grey-text text-lighten-4">La plateforme qui vous accompagne dans votre recherche de colocation
+                    quelque soit votre âge.</p>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h3 class="white-text">Contact</h3>
@@ -27,7 +29,7 @@
     <div class="footer-copyright">
         <div class="container">
             © 2018 Copyright Inter'Coloc
-            <a class="grey-text text-lighten-4 right" href="#!">Mentions Légales</a>
+            <a class="grey-text text-lighten-4 right" href="mentions_legales.php">Mentions Légales</a>
             <a class="grey-text text-lighten-4 right pad-right-20px" href="contact.php">Contact</a>
         </div>
     </div>

@@ -1,40 +1,43 @@
 <?php
 require_once ('includes/init.inc.php');
+require_once ('includes/nav_front.php');
 $title = 'Espace de connexion';
+$msg = "";  // pour eviter les undefined variable
 
 if(isset($_POST['connexion'])) {
 
-    $resultat = $pdo->prepare("SELECT * FROM clients WHERE clients_email = :email AND clients_password = :password");
+    $res_user = $pdo->prepare("SELECT * FROM clients WHERE clients_email = :email AND clients_password = :password");
+    $res_user->bindParam(':email', $_POST['clients_email']);
+    $res_user->bindParam(':password', $_POST['clients_password']);
+    $res_user->execute();
+    $res_user = $res_user->fetch(PDO::FETCH_ASSOC);
 
-    $resultat->bindValue(':email', $_POST['clients_email']);
-    $resultat->bindValue(':password', $_POST['clients_password']);
-    $resultat->execute();
+    $res_admin = $pdo->prepare("SELECT * FROM administrateur WHERE admin_user = :login AND admin_mp = :password");
+    $res_admin->bindValue(':login', $_POST['clients_email']);
+    $res_admin->bindValue(':password', $_POST['clients_password']);
+    $res_admin->execute();
+    $res_admin = $res_admin->fetch(PDO::FETCH_ASSOC);
 
-    $resultats = $resultat->fetch(PDO::FETCH_ASSOC);
-
-
-    if($resultats) {
+    if ($res_user['id_clients']) {
         session_start();
-
-        if($resultats['clients_email'] == 'administrateur@gmail.com' && $resultats['password'] == 'admin'){
-            $_SESSION['admin'] = $resultats;
-        }else{
-            $_SESSION['user'] = $resultats;
-        }
-
+        $_SESSION['user'] = $res_user;
         header('location:index-co.php');
     }
-    else {
-        $msg= '<p class="red-text">Mauvais identifiant ou mot de passe</p>';
+    else if($res_admin['id_administrateur']) {
+        session_start();
+        $_SESSION['admin'] = $res_admin;
+        header('location:index-co.php');
     }
+    else
+        $msg = "<center><p class=\"red-text\">Mauvais identifiant ou mot de passe</p></center>";
 
-// print_r($_POST);
 }
 require_once ('includes/haut.inc.php');
 ?>
-<main>
+<main style="padding-top: 100px;">
 
     <h2 class="center-align"><?= $title ?></h2>
+    <?= $msg ?>
     <form class="col s12 m12 l4" method="post" action="">
 
         <div class='row'>
@@ -57,3 +60,7 @@ require_once ('includes/haut.inc.php');
     </form>
 
 </main>
+
+<?php
+require_once ('includes/bas.inc.php');
+require_once ('includes/footer_front.php');

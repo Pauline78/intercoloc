@@ -1,9 +1,12 @@
 <?php
 require_once('includes/init.inc.php');
+
 $title = 'Mentions Légales';
+
 require_once('includes/haut.inc.php');
-require_once('includes/nav_co.php');
+require_once('includes/nav_front.php');
 ?>
+
 <main>
     <h1 class="center-align">Mentions Légales</h1>
 

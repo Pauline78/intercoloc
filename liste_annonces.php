@@ -9,12 +9,13 @@
 require_once('includes/init.inc.php');
 $title = 'Les annonces';
 
+
 /* Affichage des clients */
 $query =$pdo->query ("SELECT id_clients, clients_sexe, clients_prenom, clients_nom, clients_age, clients_adresse, clients_cp, clients_ville, clients_phone, clients_situation, clients_coloc, DATE_FORMAT(created_at, '%d/%m/%Y - %H:%i') AS created_at, DATE_FORMAT(updated_at, '%d/%m/%Y - %H:%i') AS updated_at FROM clients");
 $utilisateurs = $query->fetchAll(PDO::FETCH_ASSOC);
 
 /* Affichage des annonces */
-$query =$pdo->query ("SELECT * FROM annonce, clients WHERE clients.id_clients = annonce.id_clients");
+$query =$pdo->query ("SELECT * FROM annonce, clients WHERE (clients.id_clients = annonce.id_clients) AND ann_pf = " . $_SESSION['user']['client_pf'] . ";");
 $annonces = $query->fetchAll(PDO::FETCH_ASSOC);
 
 require_once('includes/haut.inc.php');

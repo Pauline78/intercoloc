@@ -8,19 +8,21 @@
 ?>
 
 <?php
-if($_SESSION['user']){
+if(isset($_SESSION['user'])) {
     echo '<nav class="white nav-co">
     <div class="nav-wrapper row flex flex-a">
         <a href="index-co.php" class="brand-logo"><img class="width-40" src="images/logo.png"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down col s4">
             <li><a href="liste_annonces.php">Annonces</a></li>
+            <li><a href="poster_annonce.php">Poster une annonce</a></li>
             <li><a href="profil.php">Mon profil</a></li>
             <li><a href="messagerie.php">Messagerie</a></li>
             <li><a href="logout.php">Se déconnecter</a></li>
         </ul>
     </div>
 </nav>';
-} else {
+}
+else if(isset($_SESSION['admin'])) {
     echo '<nav class="white nav-co">
     <div class="nav-wrapper row flex flex-a">
         <a href="index-co.php" class="brand-logo"><img class="width-40" src="images/logo.png"></a>
@@ -32,5 +34,9 @@ if($_SESSION['user']){
         </ul>
     </div>
 </nav>';
+}
+
+else {
+    header("Location: connexion.php");
 }
 ?>

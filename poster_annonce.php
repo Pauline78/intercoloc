@@ -19,14 +19,16 @@ if(isset($_GET['suivant']) && is_numeric($_GET['suivant']))
 
 
 require_once('includes/haut.inc.php');
+
+require_once('includes/nav_co.php');
 ?>
 
 <div class="row">
     <form class="col s12">
         <div class="row">
             <div class="input-field col s6">
-                <input placeholder="Placeholder" id="title" type="text" class="validate">
-                <label for="title">Titre de l'annocne</label>
+                <input id="title" type="text" class="validate">
+                <label for="title">Titre de l'annonce</label>
             </div>
             <div class="input-field col s6">
                 <input id="price" type="text" class="validate">
@@ -49,6 +51,12 @@ require_once('includes/haut.inc.php');
     </form>
 </div>
 
+
+<?php
+require_once ('includes/footer-co.inc.php');
+require_once ('includes/bas.inc.php');
+
+?>
 <script  type="text/javascript">
     $(document).ready(function() {
         Materialize.updateTextFields();

@@ -23,7 +23,12 @@ require_once('includes/nav_co.php');
                 <div>
                     <div class="flex flex-col flex-a center">
                         <div id="avatar" class=" light-blue darken-3 flex flex-c-c">
-                            <img src="images/avatar.png">
+                        <?php
+                            if ($_SESSION['user']['clients_sexe'] == "homme")
+                            echo '<img src="images/man.png">';
+                            else
+                            echo '<img src="images/avatar.png">';
+                        ?>
                         </div>
                         <div class="pad-top-30px">
                             <h3><?php
