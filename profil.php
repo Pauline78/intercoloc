@@ -11,6 +11,14 @@ $utilisateurs = $query->fetchAll(PDO::FETCH_ASSOC);
 $query =$pdo->query ("SELECT * FROM annonce, clients WHERE clients.id_clients = annonce.id_clients");
 $annonces = $query->fetchAll(PDO::FETCH_ASSOC);
 
+if (isset($_SESSION['user'])) {
+    /* Recuperation de l'annonce d'une personne */
+    $query = $pdo->query("SELECT ann_title, ann_price, ann_sdb, ann_chambre_dispo FROM annonce WHERE id_clients = " . $_SESSION['user']['id_clients'] . ";");
+    $coloc = $query->fetch(PDO::FETCH_ASSOC);
+}
+
+print_r($coloc);
+
 require_once('includes/haut.inc.php');
 
 require_once('includes/nav_co.php');
@@ -24,7 +32,7 @@ require_once('includes/nav_co.php');
                     <div class="flex flex-col flex-a center">
                         <div id="avatar" class=" light-blue darken-3 flex flex-c-c">
                         <?php
-                            if ($_SESSION['user']['clients_sexe'] == "homme")
+                            if (isset($_SESSION['user']) && ($_SESSION['user']['clients_sexe'] == "homme"))
                             echo '<img src="images/man.png">';
                             else
                             echo '<img src="images/avatar.png">';
@@ -33,7 +41,7 @@ require_once('includes/nav_co.php');
                         <div class="pad-top-30px">
                             <h3><?php
                                 if(isset($_SESSION['admin'])){
-                                    echo $_SESSION['admin']['clients_prenom']. ' '.$_SESSION['admin']['clients_nom'] ;
+                                    echo $_SESSION['admin']['admin_user'];
                                 }else {
                                     echo $_SESSION['user']['clients_prenom']. ' ' .$_SESSION['user']['clients_nom'];
                                 }?>
@@ -43,8 +51,8 @@ require_once('includes/nav_co.php');
                             <i class="material-icons marg-right-20px">location_city</i>
                             <p><?php
                                 if(isset($_SESSION['admin'])){
-                                    echo $_SESSION['admin']['clients_adresse']. ' '.$_SESSION['admin']['clients_cp']. ' '.$_SESSION['admin']['clients_ville'] ;
-                                }else {
+                                        echo "admin";
+								}else {
                                     echo $_SESSION['user']['clients_adresse']. ' ' .$_SESSION['user']['clients_cp']. ' ' .$_SESSION['user']['clients_ville'];
                                 }?>
                             </p>
@@ -54,7 +62,7 @@ require_once('includes/nav_co.php');
                                 <i class="material-icons marg-right-20px">person</i>
                                 <p><?php
                                     if(isset($_SESSION['admin'])){
-                                        echo $_SESSION['admin']['clients_sexe'];
+                                        echo "admin";
                                     }else {
                                         echo $_SESSION['user']['clients_sexe'];
                                     }?></p>
@@ -63,7 +71,7 @@ require_once('includes/nav_co.php');
                                 <i class="material-icons marg-right-20px">cake</i>
                                 <p><?php
                                     if(isset($_SESSION['admin'])){
-                                        echo $_SESSION['admin']['clients_age'];
+                                        echo "admin";
                                     }else {
                                         echo $_SESSION['user']['clients_age'];
                                     }?></p>
@@ -85,21 +93,21 @@ require_once('includes/nav_co.php');
                             <h3 class="orange-text">Résumé</h3>
                             <p><?php
                                 if(isset($_SESSION['admin'])){
-                                    echo $_SESSION['admin']['clients_phone'];
+                                        echo "admin";
                                 }else {
                                     echo $_SESSION['user']['clients_phone'];
                                 }?></p>
 
                             <p><?php
                                 if(isset($_SESSION['admin'])){
-                                    echo $_SESSION['admin']['clients_situation'];
+                                        echo "admin";
                                 }else {
                                     echo $_SESSION['user']['clients_situation'];
                                 }?></p>
 
                             <p><?php
                                 if(isset($_SESSION['admin'])){
-                                    echo $_SESSION['admin']['clients_coloc'];
+                                        echo "admin";
                                 }else {
                                     echo $_SESSION['user']['clients_coloc'];
                                 }?></p>
@@ -108,15 +116,15 @@ require_once('includes/nav_co.php');
                         <hr class="width-40">
 
                         <?php
-                        if($_SESSION['user']['clients_coloc'] == 'colocataire') :
+                        if(isset( $_SESSION['user']) && $_SESSION['user']['clients_coloc'] == 'colocataire') :
 
                         ?>
                         <div  class="col s12 m12 l6 flex-col no-marg marg-bot-2">
                             <h3 class="orange-text">Colocation disponible</h3>
-                            <p><?= $annonces['ann_title'] ?></p>
-                            <p><?= $_SESSION['user']['ann_price'] ?></p>
-                            <p><?= $_SESSION['user']['ann_sdb'] ?></p>
-                            <p><?= $_SESSION['user']['ann_chambre_dispo'] ?></p>
+                            <p><?= $coloc['ann_title'] ?></p>
+                            <p><?= $coloc['ann_price'] ?> €</p>
+                            <p><?php  if($coloc['ann_sdb'] == 1) echo "Salle de bain"; else echo "Pas de salle de bain"; ?></p>
+                            <p><?php  if($coloc['ann_chambre_dispo'] == 1) echo "Chambre disponible"; else echo "Chambre non disponible"; ?></p>
                             <div>
                                 <img class="width-60" src="images/annonce/photo2.jpg">
                             </div>
