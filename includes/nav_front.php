@@ -14,6 +14,13 @@
 
 <script>
 
+    if (location.url = ("index.php")) {
+        document.getElementById('vers-valeur').href = "#valeurs";
+        document.getElementById('vers-fonction').href = "#fonctionnement";
+        document.getElementById('vers-certif').href = "#certifications";
+        document.getElementById('vers-temoignage').href = "#temoignages";
+    }
+
     if (location.url = ("connexion.php")) {
         document.getElementById('vers-valeur').href = "index.php#valeurs";
         document.getElementById('vers-fonction').href = "index.php#fonctionnement";

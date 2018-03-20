@@ -243,22 +243,11 @@ require_once('includes/nav_front.php');
 
 </main>
 
-<script>
+<?php
+require_once ('includes/footer_front.php');
 
-    // carousel materialize témoignages
-
-    $('.carousel.carousel-slider').carousel({fullWidth: true});
-
-    $(document).ready(function(){
-        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-        $('.modal').modal();
-    });
-
-    $('#modal1').modal('open');
-
-    $('#modal1').modal('close');
-
-</script>
+require_once('includes/bas.inc.php');
+?>
 
 <script>
 
@@ -277,8 +266,19 @@ require_once('includes/nav_front.php');
 
 </script>
 
-<?php
-require_once ('includes/footer_front.php');
+<script>
 
-require_once('includes/bas.inc.php');
-?>
+    // carousel materialize témoignages
+
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
+
+    $(document).ready(function(){
+        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+    });
+
+    $('#modal1').modal('open');
+
+    $('#modal1').modal('close');
+
+</script>
