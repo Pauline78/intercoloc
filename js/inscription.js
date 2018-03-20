@@ -17,14 +17,35 @@ document.getElementById("suscribe-comment").onclick = function (){
     document.body.style.overflowY = "hidden";
 };
 
-// /* CLIC RETOUR HOME */
-// document.getElementById("return").onclick = function (){
-// inscription.style.right = "-100%";
-// inscription.style.transition = 'ease 0.7s';
-// document.body.style.overflowY = "scroll";
-// formBouton.style.display = "flex";
-// formMail.style.display = "none";
-// }
+/* retour a la homepage en cliquant dans la navbar */
+// VALEURS
+document.getElementById("vers-valeur").onclick = function (){
+    inscription.style.right = "-100%";
+    inscription.style.transition = 'ease 0.7s';
+    document.body.style.overflowY = "scroll";
+};
+
+// FONCTION
+document.getElementById("vers-fonction").onclick = function (){
+    inscription.style.right = "-100%";
+    inscription.style.transition = 'ease 0.7s';
+    document.body.style.overflowY = "scroll";
+};
+
+// CERTIF
+document.getElementById("vers-certif").onclick = function (){
+    inscription.style.right = "-100%";
+    inscription.style.transition = 'ease 0.7s';
+    document.body.style.overflowY = "scroll";
+};
+
+// TEMOIGNAGE
+document.getElementById("vers-temoignage").onclick = function (){
+    inscription.style.right = "-100%";
+    inscription.style.transition = 'ease 0.7s';
+    document.body.style.overflowY = "scroll";
+};
+
 
 /* CLIC FORM MAIL */
 document.getElementById("reseau-mail").onclick = function (){

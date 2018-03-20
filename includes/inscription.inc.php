@@ -34,9 +34,11 @@ if(isset($_POST['suivant']) && !empty($_POST['email'])  && !empty($_POST['nom'])
         <!-- INSCRIPTION -->
 
         <div class="width-100 height-80px flex flex-c-c">
-            <img src="../images/nombre1.png" alt="" title="">
+            <!-- <img src="images/nombre1.png" alt="" title=""> -->
 
             <p class="width-15 height-100 flex flex-a">Inscription</p>
+
+            <p class="width-10 height-100 flex flex-a"><i class="material-icons">arrow_forward</i></p>
 
             <p class="width-70 height-100 flex flex-a">On veut en savoir plus sur vous !</p>
 
