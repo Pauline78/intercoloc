@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0559463-dbea-4064-b885-ccf89438b025" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/includes/nav_front.php" afterPath="$PROJECT_DIR$/includes/nav_front.php" />
       <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="$PROJECT_DIR$/js/inscription.js" afterPath="$PROJECT_DIR$/js/inscription.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,10 +37,11 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1827">
-              <caret line="60" column="18" lean-forward="false" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="18" />
+            <state relative-caret-position="87">
+              <caret line="184" column="58" lean-forward="false" selection-start-line="184" selection-start-column="58" selection-end-line="184" selection-end-column="58" />
               <folding>
-                <marker date="1521533512722" expanded="true" signature="136:219" ph="SELECT * FRO... clients" />
+                <element signature="n#style#0;n#h2#0;n#section#3;n#main#0;n#!!top" expanded="true" />
+                <marker date="1521534143265" expanded="true" signature="136:219" ph="SELECT * FRO... clients" />
               </folding>
             </state>
           </provider>
@@ -277,12 +275,12 @@
       <workItem from="1521224275548" duration="8912000" />
       <workItem from="1521308487366" duration="598000" />
       <workItem from="1521532474751" duration="48000" />
-      <workItem from="1521532523251" duration="1080000" />
+      <workItem from="1521532523251" duration="1618000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174698000" />
+    <option name="totallyTimeSpent" value="175236000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -690,10 +688,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1827">
-          <caret line="60" column="18" lean-forward="false" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="18" />
+        <state relative-caret-position="87">
+          <caret line="184" column="58" lean-forward="false" selection-start-line="184" selection-start-column="58" selection-end-line="184" selection-end-column="58" />
           <folding>
-            <marker date="1521533512722" expanded="true" signature="136:219" ph="SELECT * FRO... clients" />
+            <element signature="n#style#0;n#h2#0;n#section#3;n#main#0;n#!!top" expanded="true" />
+            <marker date="1521534143265" expanded="true" signature="136:219" ph="SELECT * FRO... clients" />
           </folding>
         </state>
       </provider>

@@ -182,7 +182,7 @@ require_once('includes/nav_front.php');
     </section>
 
     <section id="temoignages" class="flex-col flex-c-c height-60vh marg-bot-2">
-        <h2 class="center-align">Témoignages</h2>
+        <h2 class="center-align" style="padding-top: 20px;">Témoignages</h2>
         <p class="center-align">Parce que votre avis nous interesse</p>
         <div class="carousel carousel-slider center" data-indicators="true">
             <div class="carousel-item flex-col flex-c-c pad-top-30px" href="#one!">
@@ -270,10 +270,12 @@ require_once('includes/bas.inc.php');
     // scroll liens
 
     $(document).ready(function() {
-        $('.js-scrollTo').on('click', function() { // Au clic sur un élément
-            var page = $(this).attr('href'); // Page cible
+        $('.js-scrollTo').on('click', function() { // Au clic sur un élément avec la clase js-scrollTo, on déclange la fonction
+            var page = $(this).attr('href'); // Variable page qui vaut l'element sur lequel on a cliquer et on récupere la cible avec href
             var speed = 750; // Durée de l'animation (en ms)
-            $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+            $('html, body').animate( { scrollTop: $(page).offset().top - 50}, speed );
+            // .animate est une fonction jquery, on définit que scrollTop dois prendre la taille de la page depuis le top (offset) et utiliser la vitesse de la variable speed
+            // .animate( properties [, duration ] [, easing ] [, complete ] )
             return false;
         });
     });
