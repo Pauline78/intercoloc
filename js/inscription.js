@@ -7,14 +7,14 @@ var formMail = document.getElementById("inscription-zone-form-email");
 document.getElementById("suscribe-home").onclick = function (){
     inscription.style.right = "0%";
     inscription.style.transition = 'ease 0.7s';
-    // document.body.style.overflowY = "hidden";
+    document.body.style.overflowY = "hidden";
 };
 
 /* CLIC SWITCH INSCRIPTION COMMENT*/
 document.getElementById("suscribe-comment").onclick = function (){
     inscription.style.right = "0%";
     inscription.style.transition = 'ease 0.7s';
-    // document.body.style.overflowY = "hidden";
+    document.body.style.overflowY = "hidden";
 };
 
 // /* CLIC RETOUR HOME */

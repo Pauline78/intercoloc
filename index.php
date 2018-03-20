@@ -249,6 +249,9 @@ require_once ('includes/footer_front.php');
 require_once('includes/bas.inc.php');
 ?>
 <script type="text/javascript">
+
+    // carousel materialize témoignages
+
     $('.carousel.carousel-slider').carousel({fullWidth: true});
 
     $(document).ready(function(){
@@ -259,5 +262,20 @@ require_once('includes/bas.inc.php');
     $('#modal1').modal('open');
 
     $('#modal1').modal('close');
+
 </script>
 
+<script>
+
+    // scroll liens
+
+    $(document).ready(function() {
+        $('.js-scrollTo').on('click', function() { // Au clic sur un élément
+            var page = $(this).attr('href'); // Page cible
+            var speed = 750; // Durée de l'animation (en ms)
+            $('html, body').animate( { scrollTop: $(page).offset().top }, speed ); // Go
+            return false;
+        });
+    });
+
+</script>
