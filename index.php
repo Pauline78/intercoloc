@@ -243,6 +243,11 @@ require_once('includes/nav_front.php');
 
 </main>
 
+<?php
+require_once ('includes/footer_front.php');
+require_once('includes/bas.inc.php');
+?>
+
 <script>
 
     // carousel materialize témoignages
@@ -276,9 +281,3 @@ require_once('includes/nav_front.php');
     });
 
 </script>
-
-<?php
-require_once ('includes/footer_front.php');
-
-require_once('includes/bas.inc.php');
-?>
