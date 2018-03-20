@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0559463-dbea-4064-b885-ccf89438b025" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/includes/bas.inc.php" afterPath="$PROJECT_DIR$/includes/bas.inc.php" />
-      <change beforePath="$PROJECT_DIR$/includes/inscription.inc.php" afterPath="$PROJECT_DIR$/includes/inscription.inc.php" />
-      <change beforePath="$PROJECT_DIR$/includes/nav_co.php" afterPath="$PROJECT_DIR$/includes/nav_co.php" />
       <change beforePath="$PROJECT_DIR$/includes/nav_front.php" afterPath="$PROJECT_DIR$/includes/nav_front.php" />
       <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
@@ -31,8 +28,8 @@
       <file leaf-file-name="nav_front.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/nav_front.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="53" lean-forward="true" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+            <state relative-caret-position="575">
+              <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -41,8 +38,8 @@
       <file leaf-file-name="nav_co.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/nav_co.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="16" column="48" lean-forward="false" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+            <state relative-caret-position="545">
+              <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
               <folding>
                 <marker date="1521536126285" expanded="true" signature="172:766" ph="..." />
                 <marker date="1521536126285" expanded="true" signature="218:759" ph="..." />
@@ -60,10 +57,10 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="220" column="32" lean-forward="true" selection-start-line="220" selection-start-column="32" selection-end-line="220" selection-end-column="32" />
+            <state relative-caret-position="531">
+              <caret line="278" column="0" lean-forward="true" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
               <folding>
-                <marker date="1521536834269" expanded="true" signature="136:219" ph="SELECT * FRO... clients" />
+                <marker date="1521538384277" expanded="true" signature="136:219" ph="SELECT * FRO... clients" />
               </folding>
             </state>
           </provider>
@@ -94,8 +91,8 @@
       <file leaf-file-name="bas.inc.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/bas.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+            <state relative-caret-position="0">
+              <caret line="0" column="42" lean-forward="true" selection-start-line="0" selection-start-column="42" selection-end-line="1" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -188,10 +185,10 @@
         <option value="$PROJECT_DIR$/includes/haut.inc.php" />
         <option value="$PROJECT_DIR$/formulaire.php" />
         <option value="$PROJECT_DIR$/js/inscription.js" />
-        <option value="$PROJECT_DIR$/includes/nav_front.php" />
         <option value="$PROJECT_DIR$/includes/nav_co.php" />
         <option value="$PROJECT_DIR$/includes/inscription.inc.php" />
         <option value="$PROJECT_DIR$/includes/bas.inc.php" />
+        <option value="$PROJECT_DIR$/includes/nav_front.php" />
         <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
@@ -203,7 +200,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -319,15 +316,15 @@
       <workItem from="1521224275548" duration="8912000" />
       <workItem from="1521308487366" duration="598000" />
       <workItem from="1521532474751" duration="48000" />
-      <workItem from="1521532523251" duration="3690000" />
+      <workItem from="1521532523251" duration="5233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177308000" />
+    <option name="totallyTimeSpent" value="178851000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22961374" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -700,10 +697,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/includes/inscription.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding>
+            <marker date="1521536503790" expanded="true" signature="395:589" ph="INSERT INTO clients... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/bas.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="42" lean-forward="true" selection-start-line="0" selection-start-column="42" selection-end-line="1" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/includes/nav_co.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="16" column="48" lean-forward="false" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+        <state relative-caret-position="545">
+          <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
           <folding>
             <marker date="1521536126285" expanded="true" signature="172:766" ph="..." />
             <marker date="1521536126285" expanded="true" signature="218:759" ph="..." />
@@ -719,36 +734,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/nav_front.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="53" lean-forward="true" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+        <state relative-caret-position="575">
+          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/bas.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/inscription.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <marker date="1521536503790" expanded="true" signature="395:589" ph="INSERT INTO clients... " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="220" column="32" lean-forward="true" selection-start-line="220" selection-start-column="32" selection-end-line="220" selection-end-column="32" />
+        <state relative-caret-position="531">
+          <caret line="278" column="0" lean-forward="true" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
           <folding>
-            <marker date="1521536834269" expanded="true" signature="136:219" ph="SELECT * FRO... clients" />
+            <marker date="1521538384277" expanded="true" signature="136:219" ph="SELECT * FRO... clients" />
           </folding>
         </state>
       </provider>
