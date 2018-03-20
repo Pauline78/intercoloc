@@ -38,7 +38,7 @@ require_once('includes/nav_front.php');
     <div id="header-img"></div>
     <div class="text-header absolute flex flex-col flex-c-c center-align width-100">
         <h1>Trouvez la colocation parfaite, trouvez votre Inter'Coloc !</h1>
-        <h3>La plateforme qui vous accompagne dans votre recherche de colocation </br>quelque soit votre âge.</h3>
+        <h3>La plateforme qui vous accompagne dans votre recherche de colocation <br/>quelque soit votre âge.</h3>
         <div class="marg-top-5">
             <span id="suscribe-home" class="btn-orange">S'inscrire</span>
         </div>
@@ -59,7 +59,7 @@ require_once('includes/nav_front.php');
     <section id="valeurs" class="height-70vh flex flex-col flex-c-c pad-right-left-5">
         <div class="center-align">
             <h2>Nos valeurs</h2>
-            <p>Elles nous définissent, décrivent qui nous sommes et qui nous voulons être à</br>travers notre offre.
+            <p>Elles nous définissent, décrivent qui nous sommes et qui nous voulons être à<br/>travers notre offre.
                 Alors participez à notre projet pour en profiter !</p>
         </div>
         <div class="flex flex-s-a width-100 pad-top-30px row">
@@ -218,7 +218,7 @@ require_once('includes/nav_front.php');
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
             <h3 class="center-align">Connexion</h3>
 
-            <form class=" " method="post" action="">
+            <form method="post">
 
                 <div class='row'>
                     <div class='input-field col s12 m12 l8 offset-l2'>
@@ -243,12 +243,7 @@ require_once('includes/nav_front.php');
 
 </main>
 
-<?php
-require_once ('includes/footer_front.php');
-
-require_once('includes/bas.inc.php');
-?>
-<script type="text/javascript">
+<script>
 
     // carousel materialize témoignages
 
@@ -281,3 +276,9 @@ require_once('includes/bas.inc.php');
     });
 
 </script>
+
+<?php
+require_once ('includes/footer_front.php');
+
+require_once('includes/bas.inc.php');
+?>

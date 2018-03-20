@@ -136,7 +136,7 @@ if(isset($_POST['suivant']) && !empty($_POST['email'])  && !empty($_POST['nom'])
 
 					</span>
 
-                    <span id="naissance" class=" marg-bot-2" ">Date de naissance :</span>
+                    <span id="naissance" class=" marg-bot-2">Date de naissance :</span>
 
                     <input type="date" name="age" class="inscription-zone-form-email-champ marg-bot-2" value="<?= (!empty($resultat)) ? $resultat['age'] : '' ?>">
 
@@ -148,11 +148,9 @@ if(isset($_POST['suivant']) && !empty($_POST['email'])  && !empty($_POST['nom'])
 					</span>
 
                     <span class="flex flex-a flex-s-a width-60">
-						<p class="span-email" id="retour-menu">Retour</p>
+						<span class="span-email" id="retour-menu">Retour</span>
 
-                        <div>
-                            <button class="span-email" name="suivant" type="submit" value="1" class="btn-orange">Suivant</button>
-                        </div>
+                        <button class="btn-orange span-email" name="suivant" type="submit" value="1">Suivant</button>
 					</span>
 
                     <p>Vous avez un compte ? <a href="">Connectez-vous !</a></p>

@@ -1,6 +1,6 @@
 <nav class="white nav-co nav-fixed">
     <div class="nav-wrapper row flex flex-a">
-        <a href="index.php" class="brand-logo row"><img class="width-30" src="images/logo.png"></a>
+        <a href="index.php" class="brand-logo row"><img class="width-30" src="images/logo.png" alt="logo"></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down col s6">
             <li><a href="#valeurs" class="scroll js-scrollTo">Valeurs</a></li>
             <li><a href="#fonctionnement" class="js-scrollTo">Fonctionnement</a></li>
