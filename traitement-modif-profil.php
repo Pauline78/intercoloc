@@ -1,5 +1,5 @@
 <?php
-require_once('../includes/init.inc.php');
+require_once('includes/init.inc.php');
 $empty = null;
 $champsVides = [];
 foreach ($_POST as $key => $value) {
@@ -13,7 +13,7 @@ foreach ($_POST as $key => $value) {
 //on controle d'abord si les champs obligatoires ne sont pas vides, puis s'ils correspondent aux exigences demandées
 if(isset($_POST['enregistrement']) && !empty($_POST['nom']) && !empty($_POST['prenom'])
 ){
-        $modif = $pdo->prepare("UPDATE clients
+    $modif = $pdo->prepare("UPDATE clients
               SET clients_sexe = :sexe,
               clients_prenom = :prenom,
               clients_nom = :nom,
@@ -29,23 +29,23 @@ if(isset($_POST['enregistrement']) && !empty($_POST['nom']) && !empty($_POST['pr
               client_newsletter = :newsletter
               WHERE id_clients =".$_GET['modification']);
 
-        $modif-> bindValue(':sexe', $_POST['sexe'], PDO::PARAM_STR );
-        $modif-> bindValue(':prenom', $_POST['prenom'], PDO::PARAM_STR );
-        $modif-> bindValue(':nom', $_POST['nom'], PDO::PARAM_STR );
-        $modif-> bindValue(':age', $_POST['age'] );
-        $modif-> bindValue(':email', $_POST['email'], PDO::PARAM_STR );
-        $modif-> bindValue(':password', $_POST['password'], PDO::PARAM_STR );
-        $modif-> bindValue(':adresse', $_POST['adresse'], PDO::PARAM_STR );
-        $modif-> bindValue(':cp', $_POST['cp'], PDO::PARAM_INT );
-        $modif-> bindValue(':ville', $_POST['ville'], PDO::PARAM_STR );
-        $modif-> bindValue(':phone', $_POST['phone'], PDO::PARAM_STR );
-        $modif-> bindValue(':situation', $_POST['situation'], PDO::PARAM_STR );
-        $modif-> bindValue(':coloc', $_POST['coloc'], PDO::PARAM_STR );
-        $modif-> bindValue(':newsletter', $_POST['newsletter'], PDO::PARAM_INT);
+    $modif-> bindValue(':sexe', $_POST['sexe'], PDO::PARAM_STR );
+    $modif-> bindValue(':prenom', $_POST['prenom'], PDO::PARAM_STR );
+    $modif-> bindValue(':nom', $_POST['nom'], PDO::PARAM_STR );
+    $modif-> bindValue(':age', $_POST['age'] );
+    $modif-> bindValue(':email', $_POST['email'], PDO::PARAM_STR );
+    $modif-> bindValue(':password', $_POST['password'], PDO::PARAM_STR );
+    $modif-> bindValue(':adresse', $_POST['adresse'], PDO::PARAM_STR );
+    $modif-> bindValue(':cp', $_POST['cp'], PDO::PARAM_INT );
+    $modif-> bindValue(':ville', $_POST['ville'], PDO::PARAM_STR );
+    $modif-> bindValue(':phone', $_POST['phone'], PDO::PARAM_STR );
+    $modif-> bindValue(':situation', $_POST['situation'], PDO::PARAM_STR );
+    $modif-> bindValue(':coloc', $_POST['coloc'], PDO::PARAM_STR );
+    $modif-> bindValue(':newsletter', $_POST['newsletter'], PDO::PARAM_INT);
 
 
-        $modification = $modif->execute();
-        header('Location: gestion_clients.php');
+    $modification = $modif->execute();
+    header('Location: profil.php');
 
 }else {
     $_SESSION['error_message'][] = 'Les champs obligatoires sont vides';

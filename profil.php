@@ -1,6 +1,8 @@
 <?php
 require_once('includes/init.inc.php');
 $title = 'Profil';
+session_reset();
+session_start();
 
 
 /* Affichage des clients */
@@ -17,7 +19,9 @@ if (isset($_SESSION['user'])) {
     $coloc = $query->fetch(PDO::FETCH_ASSOC);
 }
 
-print_r($coloc);
+// print_r($coloc);
+print_r($_SESSION);
+print_r($_SESSION['user']['id_clients']);
 
 require_once('includes/haut.inc.php');
 
@@ -133,7 +137,7 @@ require_once('includes/nav_co.php');
                         endif;
                         ?>
 
-                        <li class="btn waves-light waves-effect blue darken-3 marg-top-2"><a class="white-text marg-bot-2" href="connexion.php">Modifier</a></li>
+                        <li class="btn waves-light waves-effect blue darken-3 marg-top-2"><a class="white-text marg-bot-2" href="modification_profil.php?modification=<?= $_SESSION['user']['id_clients']; ?>">Modifier</a></li>
                     </div>
 
 
