@@ -21,7 +21,7 @@ $annonces = $query->fetchAll(PDO::FETCH_ASSOC);
 require_once('includes/haut.inc.php');
 
 require_once('includes/nav_co.php');
-
+print_r('ann_pf');
 ?>
 <main>
     <div class="row">
