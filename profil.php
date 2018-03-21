@@ -1,8 +1,6 @@
 <?php
 require_once('includes/init.inc.php');
 $title = 'Profil';
-session_reset();
-session_start();
 
 
 /* Affichage des clients */
@@ -20,8 +18,8 @@ if (isset($_SESSION['user'])) {
 }
 
 // print_r($coloc);
-print_r($_SESSION);
-print_r($_SESSION['user']['id_clients']);
+// print_r($_SESSION);
+// print_r($_SESSION['user']['id_clients']);
 
 require_once('includes/haut.inc.php');
 
