@@ -1,7 +1,7 @@
 <?php
 require_once('includes/init.inc.php');
-$title = 'Profil';
 
+$title = 'Profil de ' . $_SESSION['user']['clients_prenom'] . " " . $_SESSION['user']['clients_nom'] ;
 
 /* Affichage des clients */
 $query =$pdo->query ("SELECT id_clients, clients_sexe, clients_prenom, clients_nom, clients_age, clients_adresse, clients_cp, clients_ville, clients_phone, clients_situation, clients_coloc, DATE_FORMAT(created_at, '%d/%m/%Y - %H:%i') AS created_at, DATE_FORMAT(updated_at, '%d/%m/%Y - %H:%i') AS updated_at FROM clients LIMIT 3");
@@ -18,7 +18,11 @@ if (isset($_SESSION['user'])) {
 }
 
 // print_r($coloc);
-// print_r($_SESSION);
+print_r($_SESSION);
+print_r("<br/>");
+print_r($_SESSION['user']['clients_coloc']);
+print_r("<br/>");
+print_r($_SESSION['user']['clients_age']);
 // print_r($_SESSION['user']['id_clients']);
 
 require_once('includes/haut.inc.php');
@@ -108,21 +112,28 @@ require_once('includes/nav_co.php');
                                 }?></p>
 
                             <p><?php
-                                if(isset($_SESSION['admin'])){
-                                        echo "admin";
-                                }else {
-                                    echo $_SESSION['user']['clients_coloc'];
-                                }?></p>
+                                if(isset($_SESSION['admin'])) :
+                                    echo "admin";
+                                else :
+                                    if(isset( $_SESSION['user']) && $_SESSION['user']['clients_coloc'] == 'colocataire') :
+                                    ?>
+                                        Actif, cherche un(e) <?= $_SESSION['user']['clients_coloc'];
+                                    else :
+                                    ?>
+                                        Senior, je propose une <?= $_SESSION['user']['clients_coloc'];
+                                    endif;
+                                endif;
+                                ?>
+                            </p>
                         </div>
 
                         <hr class="width-40">
 
                         <?php
-                        if(isset( $_SESSION['user']) && $_SESSION['user']['clients_coloc'] == 'colocataire') :
-
+                        if(isset( $_SESSION['user']) && $_SESSION['user']['clients_coloc'] == 'colocation') :
                         ?>
                         <div  class="col s12 m12 l6 flex-col no-marg marg-bot-2">
-                            <h3 class="orange-text">Colocation disponible</h3>
+                            <h3 class="orange-text">Vous proposez :</h3>
                             <p><?= $coloc['ann_title'] ?></p>
                             <p><?= $coloc['ann_price'] ?> €</p>
                             <p><?php  if($coloc['ann_sdb'] == 1) echo "Salle de bain"; else echo "Pas de salle de bain"; ?></p>

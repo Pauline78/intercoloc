@@ -14,7 +14,7 @@ if(isset($_POST['enregistrement']) && !empty($_POST['nom']) && !empty($_POST['pr
     if (!preg_match('#^[0-9]{10}$#',$_POST['telephone'])){
         $_SESSION['error_message'][] = 'Le numéro de téléphone doit contenir 10 chiffres';
         $ok=false;
-    }   elseif(strlen($_POST['nom'])< 3) {
+    }   else if(strlen($_POST['nom'])< 3) {
         $_SESSION['error_message'][] = 'Le nom doit contenir plus de 3 caractère';
         $ok=false;
     } else if (strlen($_POST['prenom'])< 3) {
@@ -147,6 +147,7 @@ require_once('includes/haut.inc.php');
                 <div class="flex-col l4">
                     <label>Vous êtes à la recherche...</label>
                     <select name="coloc">
+                        <option value="" disabled selected>Choose your option</option>
                         <option value="colocataire">d'un colocataire</option>
                         <option value="colocation">d'une colocation</option>
                     </select>
