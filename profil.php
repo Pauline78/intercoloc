@@ -18,11 +18,11 @@ if (isset($_SESSION['user'])) {
 }
 
 // print_r($coloc);
-print_r($_SESSION);
-print_r("<br/>");
-print_r($_SESSION['user']['clients_coloc']);
-print_r("<br/>");
-print_r($_SESSION['user']['clients_age']);
+// print_r($_SESSION);
+// print_r("<br/>");
+// print_r($_SESSION['user']['clients_coloc']);
+// print_r("<br/>");
+// print_r($_SESSION['user']['clients_age']);
 // print_r($_SESSION['user']['id_clients']);
 
 require_once('includes/haut.inc.php');

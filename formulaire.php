@@ -15,9 +15,18 @@ $full_div = "";
 // tant que $c est plus petit que le nombre total de formulaire (cat)
 for ($c = 1; $c <= $count_cat['cat']; $c++) {
 
+    $carac = 'Caractéristiques';
+    if($c == 1) :
+        $carac = 'Caractéristiques';
+    elseif($c == 2) :
+        $carac = 'Alimentation';
+    elseif($c == 3) :
+        $carac = 'Vie commune';
+    endif;
+
     $q = "<div id='form-" . $c . "' class='form'>
 
-            <h1 id='titre-formulaire'>Formulaire " . $c . "</h1>
+            <h1 id='titre-formulaire'>" . $carac . "</h1>
         
             <div class='all-questions'>";
 
@@ -36,7 +45,7 @@ for ($c = 1; $c <= $count_cat['cat']; $c++) {
                                     $choix = explode(';', $questions[$z]['choix']);
 
                                     for ($x = 0; $choix[$x]; $x++)
-                                        $q .= "<li><input type='radio' name='" . $z . "'>" . $choix[$x] . "</li>";
+                                        $q .= "<li><input type='radio' name='" . $z . "'>". $choix[$x] . "</li>";
 
                                     $q .= "
                                 </ul>
