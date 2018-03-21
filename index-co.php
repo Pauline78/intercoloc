@@ -66,7 +66,7 @@ require_once('includes/nav_co.php');
                 <div class="col s12 m12 l4 height-30">
                     <div class="card">
                         <div class="card-image">
-                            <img src="images/annonce/<?= $value['ann_photo'] ?>">
+                            <img src="images/annonce/<?= $value['ann_photo'] ?>" style="height: 380px;">
                             <div class="absolute pad-15px white" style="top: 0; right: 0;">
                                 <h4>75%</h4>
                             </div>

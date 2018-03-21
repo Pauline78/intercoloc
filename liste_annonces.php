@@ -21,7 +21,7 @@ $annonces = $query->fetchAll(PDO::FETCH_ASSOC);
 require_once('includes/haut.inc.php');
 
 require_once('includes/nav_co.php');
-print_r('ann_pf');
+// print_r('ann_pf');
 ?>
 <main>
     <div class="row">
@@ -46,7 +46,7 @@ print_r('ann_pf');
         <div class="col s12 m4">
             <div class="card">
                 <div class="card-image">
-                    <img src="images/photo1.jpg">
+                    <img src="images/annonce/<?= $value['ann_photo'] ?>" style="height: 380px;">
                     <div class="absolute pad-15px white" style="top: 0; right: 0;">
                         <h4>75%</h4>
                     </div>

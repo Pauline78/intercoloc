@@ -26,7 +26,7 @@ require_once('includes/nav_co.php');
 
 <div class="carousel carousel-slider center" data-indicators="true" xmlns="http://www.w3.org/1999/html">
         <div class="carousel-item  white-text height-60vh" href="#one!">
-            <img class="height-60vh" src="images/annonce/photo1.jpg">
+            <img class="height-60vh" src="images/annonce/<?= $annonces['ann_photo'] ?>">
         </div>
         <div class="carousel-item  white-text" href="#two!">
             <img class="height-60vh" src="images/annonce/photo2.jpg">
