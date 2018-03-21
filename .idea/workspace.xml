@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/index.php" line="275" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0559463-dbea-4064-b885-ccf89438b025" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/formulaire.php" afterPath="$PROJECT_DIR$/formulaire.php" />
-      <change beforePath="$PROJECT_DIR$/poster_annonce.php" afterPath="$PROJECT_DIR$/poster_annonce.php" />
-      <change beforePath="$PROJECT_DIR$/profil.php" afterPath="$PROJECT_DIR$/profil.php" />
-    </list>
+    <list default="true" id="a0559463-dbea-4064-b885-ccf89438b025" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -379,16 +374,15 @@
       <workItem from="1521308487366" duration="598000" />
       <workItem from="1521532474751" duration="48000" />
       <workItem from="1521532523251" duration="5233000" />
-      <workItem from="1521617913692" duration="20064000" />
+      <workItem from="1521617913692" duration="20662000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204951000" />
+    <option name="totallyTimeSpent" value="205549000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22961374" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15405117" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
