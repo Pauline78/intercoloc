@@ -8,7 +8,7 @@ $query =$pdo->query ("SELECT id_clients, clients_sexe, clients_prenom, clients_n
 $utilisateurs = $query->fetchAll(PDO::FETCH_ASSOC);
 
 /* Affichage des annonces */
-$query =$pdo->query ("SELECT * FROM annonce, clients WHERE (clients.id_clients = annonce.id_clients) AND ann_pf = " . $_SESSION['user']['client_pf'] . "; LIMIT 2");
+$query =$pdo->query ("SELECT * FROM annonce, clients WHERE clients.id_clients = annonce.id_clients LIMIT 2");
 $annonces = $query->fetchAll(PDO::FETCH_ASSOC);
 
 //var_dump($_SESSION['admin'];

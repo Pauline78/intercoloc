@@ -1,7 +1,8 @@
 <?php
 require_once('includes/init.inc.php');
 
-$title = 'Profil de ' . $_SESSION['user']['clients_prenom'] . " " . $_SESSION['user']['clients_nom'] ;
+
+$title = 'Votre profil';
 
 /* Affichage des clients */
 $query =$pdo->query ("SELECT id_clients, clients_sexe, clients_prenom, clients_nom, clients_age, clients_adresse, clients_cp, clients_ville, clients_phone, clients_situation, clients_coloc, DATE_FORMAT(created_at, '%d/%m/%Y - %H:%i') AS created_at, DATE_FORMAT(updated_at, '%d/%m/%Y - %H:%i') AS updated_at FROM clients LIMIT 3");

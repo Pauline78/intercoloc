@@ -16,7 +16,7 @@ if(isset($_SESSION['user'])) {
             <li><a href="liste_annonces.php">Annonces</a></li>
             <li><a href="poster_annonce.php">Poster une annonce</a></li>
             <li><a href="profil.php">Mon profil</a></li>
-            <li><a href="messagerie.php">Messagerie</a></li>
+            <li><a href="#">Messagerie</a></li>
             <li><a href="logout.php">Se déconnecter</a></li>
         </ul>
     </div>

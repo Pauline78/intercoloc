@@ -9,40 +9,40 @@ require_once('includes/haut.inc.php');
     <h1 class="center-align marron-text engras">Ajouter une annonce</h1>
 
 		<div class="row">
-		<form action="ajout_annonce.php" method="post" enctype="multipart/form-data"  class="col s12">
+		<form action="traitement-annonce.php" method="post" enctype="multipart/form-data"  class="col s12">
         <div class="row">
             <div class="input-field col s6">
-                <input id="title" type="text" class="validate">
+                <input id="title" name="title" type="text" class="validate">
                 <label for="title">Titre de l'annonce</label>
             </div>
 				</div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="price" type="number" class="validate">
+                <input id="price" name="price" type="number" class="validate">
                 <label for="price">Quel est le prix du loyer par mois ?</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="descrition" type="text" class="validate">
+                <input id="description" name="description" type="text" class="validate">
                 <label for="description">Description</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="ville" type="text" class="validate">
+                <input id="ville" name="ville" type="text" class="validate">
                 <label for="ville">Ville</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="cp" type="text" class="validate">
+                <input id="cp" name="cp" type="text" class="validate">
                 <label for="cp">Code Postal</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="adresse" type="text" class="validate">
+                <input id="adresse" name="adresse" type="text" class="validate">
                 <label for="adresse">Adresse</label>
             </div>
         </div>
@@ -50,8 +50,8 @@ require_once('includes/haut.inc.php');
             <div>
                 <select name="sexe">
                     <option value="" disabled selected>---</option>
-                    <option value="homme">Un homme</option>
-                    <option value="femme">Une femme</option>
+                    <option value="homme" name="sexe">Un homme</option>
+                    <option value="femme" name="sexe">Une femme</option>
                 </select>
                 <label>Vous préféreriez vivre avec</label>
             </div>
@@ -60,61 +60,68 @@ require_once('includes/haut.inc.php');
             <div class="input-field col s6">
                 <select name="travail">
                     <option value="" disabled selected>---</option>
-                    <option value="etudiant">Etudiant</option>
-                    <option value="salarié">Actif</option>
-                    <option value="retraité">Retraité</option>
+                    <option value="etudiant" name="travail">Etudiant</option>
+                    <option value="salarié" name="travail">Actif</option>
+                    <option value="retraité"name="travail">Retraité</option>
                 </select>
-                <label>Vous êtes</label>
+                <label for="travail">Vous êtes</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <select name="sexe">
+                <select name="temps">
                     <option value="" disabled selected>---</option>
-                    <option value="1 à 6 mois">1 à 6 mois</option>
-                    <option value="1 an">1 an</option>
-                    <option value="Indéfinis">Indéfinis</option>
+                    <option value="1 à 6 mois" name="temps">1 à 6 mois</option>
+                    <option value="1 an" name="temps">1 an</option>
+                    <option value="Indéfinis" name="temps">Indéfinis</option>
                 </select>
                 <label>Pour combien de temps cherchez vous un colocataire</label>
             </div>
         </div>
 				<div class="row">
             <div class="input-field col s6">
-                <input id="chambre" type="number" class="validate">
+                <input id="chambre" name="chambre" type="number" class="validate">
                 <label for="chambre">Combien de chambres disponibles ?</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="sdb" type="number" class="validate">
+                <input id="sdb" name="sdb" type="number" class="validate">
                 <label for="sdb">Combien de salle d'eaux disponibles ?</label>
             </div>
         </div>
 				<div class="row">
             <div class="input-field col s6">
-                <input id="wc" type="number" class="validate">
+                <input id="wc" name="wc" type="number" class="validate">
                 <label for="wc">Combien de toilettes disponibles ?</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="internet" value="0" name="sdv" type="radio" class="validate">non
-                <input id="internet" value="1" name="sdv" type="radio" class="validate">oui
+                <input id="ascenseur" value="0" name="ascenseur" type="radio" class="validate">non
+                <input id="ascenseur" value="1" name="ascenseur" type="radio" class="validate">oui
+                <label for="ascenseur">Votre immeuble possède t'il un ascenseur ?</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="internet" value="0" name="internet" type="radio" class="validate">non
+                <input id="internet" value="1" name="internet" type="radio" class="validate">oui
                 <label for="internet">Vous avez internet ?</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="alarme" value="0" name="sdv" type="radio" class="validate">non
-                <input id="alarme" value="1" name="sdv" type="radio" class="validate">oui
+                <input id="alarme" value="0" name="alarme" type="radio" class="validate">non
+                <input id="alarme" value="1" name="alarme" type="radio" class="validate">oui
                 <label for="alarme">Vous avez une alarme ?</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input id="sdb" value="0" name="sdv" type="radio" class="validate">non
-                <input id="sdb" value="1" name="sdv" type="radio" class="validate">oui
-                <label for="sdb">Vous avez la télévision ?</label>
+                <input id="tele" value="0" name="tele" type="radio" class="validate">non
+                <input id="tele" value="1" name="tele" type="radio" class="validate">oui
+                <label for="tele">Vous avez la télévision ?</label>
             </div>
         </div>
         <div class="row">
@@ -139,7 +146,7 @@ require_once('includes/haut.inc.php');
             </div>
         </div>
 		<hr>
-        <div class="input-field col s6">
+        <!--<div class="input-field col s6">
             <div class="btn marron-bg">
                 <span>Photo principale</span>
                 <input type="file" id="photo_principale_article" name="photo_principale">
@@ -151,7 +158,7 @@ require_once('includes/haut.inc.php');
                 <span>Ajouter d'autres photos à l'article</span>
                 <input type="file"  id="photo_autre_article" multiple name="autre_photo[]">
             </div>
-        </div>
+        </div>-->
 
         <input type="submit" class="btn marron-bg" name="envoyer">
 
@@ -162,12 +169,12 @@ require_once('includes/haut.inc.php');
 
 <?php
 require_once ('includes/footer-co.inc.php');
-require_once ('includes/bas.inc.php');
+// require_once ('includes/bas.inc.php');
 
 ?>
-<script  type="text/javascript">
+<!--<script  type="text/javascript">
     $(document).ready(function() {
         Materialize.updateTextFields();
     });
 
-</script>
+</script>-->
