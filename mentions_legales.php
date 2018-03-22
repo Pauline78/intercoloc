@@ -7,7 +7,7 @@ require_once('includes/haut.inc.php');
 require_once('includes/nav_front.php');
 ?>
 
-<main>
+<main style="padding-top: 100px;">
     <h1 class="center-align">Mentions Légales</h1>
 
     <p style="text-align:justify">Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site : <a href="http://www.intercoloc.com" target="_blank">www.intercoloc.com</a> les informations suivantes :</p>
