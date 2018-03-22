@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <title><?= $title ?></title>
 
-    <script type="text/javascript" src="/tarteaucitron/tarteaucitron.js"></script>
+    <script type="text/javascript" src="tarteaucitron/tarteaucitron.js"></script>
 
     <script type="text/javascript">
         tarteaucitron.init({
@@ -29,4 +29,5 @@
     </script>
 </head>
 <body>
+<div class="tarteaucitronOpenPanel" style="position: fixed; bottom:10px; right:10px;">Gestion des cookies</div>
 
