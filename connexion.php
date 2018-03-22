@@ -55,7 +55,7 @@ require_once ('includes/haut.inc.php');
         </div>
 
         <div class='row'>
-            <button type='submit' name='connexion' class='col s12 m12 l2 offset-l5 btn btn-large waves-effect btn-orange'>Connexion</button>
+            <button type='submit' name='connexion' class='col s12 m12 l2 offset-l5 btn btn-large waves-effect orange darken-4'>Connexion</button>
         </div>
     </form>
 
